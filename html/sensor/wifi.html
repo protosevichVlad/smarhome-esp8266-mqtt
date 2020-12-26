@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wi-Fi setting</title>
+</head>
+<body>
+  <p>Available networks</p>
+  <ul id="net"></ul>
+  <form action="/wifi" method="post">
+    <b>Wi-Fi</b><br>
+    <p style="margin:0; width: 120px; display: inline-block">SSID: </p><input name="ssid" type="text" required><br>
+    <p style="margin:0; width: 120px; display: inline-block">Password: </p><input name="pass" type="password" required><br>
+    <button type="submit">Ok</button>
+  </form>
+  <br>
+  <a href="/">Info</a>
+</body>
+<script>
+  async function get()
+  {
+    let response = await fetch("/getAvailableNetworks");
+
+    if (response.ok) { // если HTTP-статус в диапазоне 200-299
+      let text = await response.text();
+      document.getElementById("net").innerHTML = text;
+    } else {
+      alert("Ошибка HTTP: " + response.status);
+    }
+  }
+  get();
+</script>
+</html>

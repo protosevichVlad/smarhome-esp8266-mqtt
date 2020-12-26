@@ -8,13 +8,13 @@
 #define BUTTON_PIN 13 // D7
 #define ARRAY_SIZE 5
 
-const char *ssid =  "........";  // Имя вайфай точки доступа
-const char *pass =  "........"; // Пароль от точки доступа
+const char *ssid =  "ZTE_a791e4";  // Имя вайфай точки доступа
+const char *pass =  "Protosevich_Famili"; // Пароль от точки доступа
 
-const char *mqtt_server = "........"; // Имя сервера MQTT
+const char *mqtt_server = "192.168.1.6"; // Имя сервера MQTT
 const int mqtt_port = 1883; // Порт для подключения к серверу MQTT
-const char *mqtt_user = "........"; // Логиn от сервер
-const char *mqtt_pass = "........"; // Пароль от сервера
+const char *mqtt_user = "vlad"; // Логиn от сервер
+const char *mqtt_pass = "2358"; // Пароль от сервера
 
 const char *mqtt_client_id = "esp_dashboard"; // client id
 
